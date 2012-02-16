@@ -1,0 +1,1 @@
+curlftpfs -o user="class1a8:oDcAqw4G",allow_other ftp://class1a2011.h19.ru /media/ftp/class1a2011.h19.ru

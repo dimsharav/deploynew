@@ -1,0 +1,1 @@
+curlftpfs -o user="prk.perm:HRbjBuce",allow_other ftp://77.236.64.199 /media/ftp/prkperm
