@@ -1,1 +1,1 @@
-curlftpfs -o user="h61798:HG1vRn54Z",allow_other ftp://1a17.hdd1.ru /media/ftp/1a17.hdd1.ru
+curlftpfs -o user="h61798",allow_other ftp://1a17.hdd1.ru /media/ftp/1a17.hdd1.ru
