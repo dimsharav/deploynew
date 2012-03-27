@@ -30,7 +30,7 @@ set termencoding=utf-8
 set fileencodings=utf8,cp1251
 set encoding=utf8
 
-"set nu                          " нумерация строк
+set nu                          " нумерация строк
 
 set expandtab                   " пробелы вместо табуляции
 set tabstop=4                   " размер табуляции - 4

@@ -141,8 +141,10 @@ zstyle ':completion:*' use-compctl true
 zstyle ':completion:*' verbose true
 zstyle ':completion:*' word true
 
-export GPGKEY=57817429
+### keychain
 
-/usr/bin/keychain ~/.ssh/id_rsa
-[[ -f $HOME/.keychain/$HOSTNAME-sh ]] && source $HOME/.keychain/$HOSTNAME-sh
+eval $(keychain --eval --agents ssh -Q --quiet id_rsa)
+#
+#/usr/bin/keychain ~/.ssh/id_rsa
+#[[ -f $HOME/.keychain/$HOSTNAME-sh ]] && source $HOME/.keychain/$HOSTNAME-sh
 
