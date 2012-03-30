@@ -133,9 +133,9 @@ map <c-l> <c-w>l
 map <c-h> <c-w>h
 
 " F2 - быстрое сохранение
-nmap <F2> :w<cr>                " нормальный режим
-vmap <F2> <esc>:w<cr>li         " визуальый режим
-imap <F2> <esc>:w<cr>li         " режим вставки
+nmap <F2> :w<cr>
+vmap <F2> <esc>:w<cr>li
+imap <F2> <esc>:w<cr>li
 
 " Просмотр шелла
 "map <F5> :execute '!'<CR>
