@@ -38,8 +38,8 @@ set ic!                         " регистронезависимый пои�
 set statusline=%<%f\ [%Y%R%W]%1*%{(&modified)?'\ [+]\ ':''}%*%=%c%V,%l\ %P\ [%n]
 
 " размеры окна
-set lines=100
-set columns=150 
+"set lines=100
+"set columns=150 
 
 " настройки GUI
 set guifont=Liberation_Mono:h12:cRUSSIAN
