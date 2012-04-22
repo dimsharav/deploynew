@@ -7,9 +7,10 @@ set noswapfile
 
 set history=50                  " keep 50 lines of command line history
 
-set cursorline                  " Выделять строку, на которой стоит курсор
+"set cursorline                 " Выделять строку, на которой стоит курсор
+                                "(иногда тормозит, очень, например, в конфиге вима)
 
-"set ruler	                    
+set ruler	                    " описание TODO
 set noshowcmd	            	" display incomplete commands
 set incsearch	            	" do incremental searching
 
@@ -29,22 +30,18 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 filetype plugin indent on       " определять тип файла и отсутпы 
-syntax on                       " подсветка синтаксиса
+syntax on                       " подсветка синтаксиса (иногда тормозит)
 set hlsearch                    " подсветка найденных значений
 set ic!                         " регистронезависимый поиск
 "autocmd FileType text setlocal textwidth=78
 
-" Set format of statusline
-set statusline=%<%f\ [%Y%R%W]%1*%{(&modified)?'\ [+]\ ':''}%*%=%c%V,%l\ %P\ [%n]
+" Установка формата строки статуса TODO
+"set statusline=%<%f\ [%Y%R%W]%1*%{(&modified)?'\ [+]\ ':''}%*%=%c%V,%l\ %P\ [%n]
+set statusline='status'
 
 " размеры окна
 "set lines=100
 "set columns=150 
-
-" настройки GUI
-set guifont=Liberation_Mono:h12:cRUSSIAN
-set guioptions-=m
-set guioptions-=T
 
 set nu                          " нумерация строк
 
@@ -52,10 +49,21 @@ set expandtab                   " пробелы вместо табуляции
 set tabstop=4                   " размер табуляции - 4
 set shiftwidth=4                " ширина отступа - 4 пробела
 
-autocmd! bufwritepost ~/.vimrc execute "normal! :source ~/.vimrc"
+" Описание TODO 
+"autocmd! bufwritepost ~/.vimrc execute "normal! :source ~/.vimrc"
 
 colorscheme wombat256mod
 set t_Co=256        " 256 цветов
+
+"--------------
+" Настройки GUI
+"--------------
+" Шрифт для windows
+"set guifont=Liberation_Mono:h12:cRUSSIAN
+" Убрать меню
+set guioptions-=m
+" Убрать тулбар
+set guioptions-=T
 
 "-----------------
 " Russian support
@@ -137,7 +145,7 @@ map Ю >
 set termencoding=utf8
 " Возможные кодировки файлов и последовательность определения
 set fileencodings=utf8,cp1251
-set encoding=cp1251
+set encoding=utf8
 
 " По F8 - меню выбора кодировки файла
 set wildmenu
@@ -154,8 +162,10 @@ map <F8> :emenu Encoding.<TAB>
 "---------
 let mapleader = ","             " установка <leader> в ","
 
-map <leader>td <Plug>TaskList       " \td включает плагин TaskList
-map <leader>n :NERDTreeToggle<CR>   " \n открывает NERDTree
+map <leader>td <Plug>TaskList       " ,td включает плагин TaskList
+map <leader>n :NERDTreeToggle<CR>   " ,n открывает NERDTree
+map <leader>h :bp<CR>   " ,h открывает предыдущий буфер
+map <leader>l :bn<CR>               " ,h открывает следующий буфер
 
 " Hint: разделение окна
 "
@@ -192,7 +202,7 @@ set autochdir                       "Автоматическое переклю
 let g:pep8_map='<leader>8'
 
 " django TODO: нормальное описание
-map <leader>dt :set makeprg=python\ manage.py\ test\|:call MakeGreen()<CR>
+map <leader>dt :set makeprg=python2\ manage.py\ test\|:call MakeGreen()<CR>
 
 " Автодополнение
 au FileType python set omnifunc=pythoncomplete#Complete
