@@ -6,15 +6,11 @@
 alias mv='nocorrect mv -i'       # no spelling correction on mv
 alias cp='nocorrect cp -i'       # no spelling correction on cp
 alias rm='nocorrect rm -i'       # no spelling correction on rm
-alias mkdir='nocorrect mkdir'    # no spelling correction on mkdir
-alias d='ls --color=auto'
-alias ll='ls -l --color=auto'
-alias s='sdcv'
+alias mkdir='nocorrect mkdir' # no spelling correction on mkdir
+alias d='ls'
+alias s='cd ..'
 alias p='cd -'
 alias rdp='rdesktop -g 1024x768'
-alias rs='rsync -P'
-alias py='ping ya.ru'
-alias p4='ping 4.2.2.2'
 
 # Shell compatibility functions
 setenv() { export $1=$2 }  # csh compatibility
@@ -24,9 +20,6 @@ _compdir=/usr/share/zsh/$ZSH_VERSION/functions/Completion
 [[ -z $fpath[(r)$_compdir] ]] && fpath=($fpath $_compdir)
 autoload -U compinit
 compinit
-
-## Localization
-export LANG=ru_RU.UTF-8
 
 ### Color completion. and menu selection
 zmodload -i zsh/complist
@@ -46,9 +39,10 @@ WORDCHARS=''
 #  alias -g O="2>&1"
 ## local mount point 
 alias -g D="/media/win_d"
+alias -g C="/media/win_c"
 ## prk
-alias -g terra="/media/net/terra/e/obmen/Шаравьев"
-alias -g borey="/media/net/borealis/c/webserver/vhost/prk.perm.ru/www/"
+alias -g terra="/media/net/terra/e"
+alias -g borey="/media/net/borealis/c"
 ## home-lan
 alias -g raD='/media/net/ra/d'
 alias -g raE='/media/net/ra/e'
@@ -90,8 +84,6 @@ bindkey " " magic-space ## do history expansion on space
 ;;
 esac
 
-
-
 export PATH="/bin:/sbin:/usr/bin:/usr/local/bin:/usr/sbin:/usr/games:/usr/share/bin:/usr/X11R6/bin:/opt/bin:/opt/kde/bin"
 
 HISTFILE=~/.zhistory
@@ -107,16 +99,14 @@ PROMPT=$'%{\e[1;34m%}%n@%m %~ $ %{\e[0m%}'
 RPROMPT=$'%{\e[1;32m%}[%{\e[1;33m%}%T%{\e[1;32m%}]%{\e[0m%}'
 
 # alias for extenshions
-alias -s {ogg,mp3,wav,wma,avi,mpeg,mpg,mov,m2v}=mplayer
-alias -s {odt,doc,sxw,rtf,odx,ods,xls,odp,ppt}="nohup libreoffice"
-alias -s {}=mplayer
-alias -s pdf="zathura"
-alias -s fb2="nohup FBReader"
-alias -s {html,htm}="nohup pick-web-browser"
-alias -s {jpg,png,gif,jpeg}="nohup viewnior"
-# alias -s exe=wine
-
+alias -s {avi,mpeg,mpg,mov,m2v}=mplayer
+alias -s {odt,doc,sxw,rtf}=oowriter
+alias -s {odx,ods,xls}=oocalc
+alias -s {odp,ppt}=ooimpress
+alias -s {ogg,mp3,wav,wma}=mplayer
+alias -s pdf=okular
 autoload -U pick-web-browser
+alias -s {html,htm}=pick-web-browser
 
 zmodload -a zsh/stat stat
 zmodload -a zsh/zpty zpty
@@ -141,10 +131,5 @@ zstyle ':completion:*' use-compctl true
 zstyle ':completion:*' verbose true
 zstyle ':completion:*' word true
 
-### keychain
-
+# autoloading ssh-key
 eval $(keychain --eval --agents ssh -Q --quiet id_rsa)
-#
-#/usr/bin/keychain ~/.ssh/id_rsa
-#[[ -f $HOME/.keychain/$HOSTNAME-sh ]] && source $HOME/.keychain/$HOSTNAME-sh
-

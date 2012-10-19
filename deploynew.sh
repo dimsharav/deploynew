@@ -1,3 +1,5 @@
 #!/bin/sh
 cp -R ./mnt /opt
-cp ./home/* ~/
+cp -R ./scripts /opt
+#cp ./home/* ~/
+
