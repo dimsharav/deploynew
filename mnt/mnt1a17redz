@@ -1,1 +1,0 @@
-curlftpfs -o user="h61798",allow_other ftp://1a17.hdd1.ru /media/ftp/1a17.hdd1.ru

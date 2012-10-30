@@ -84,7 +84,7 @@ bindkey " " magic-space ## do history expansion on space
 ;;
 esac
 
-export PATH="/bin:/sbin:/usr/bin:/usr/local/bin:/usr/sbin:/usr/games:/usr/share/bin:/usr/X11R6/bin:/opt/bin:/opt/kde/bin"
+export PATH="/bin:/sbin:/usr/bin:/usr/local/bin:/usr/sbin:/usr/games:/usr/share/bin:/usr/X11R6/bin:/home/dimsharav/.gem/ruby/1.9.1/bin:"
 
 HISTFILE=~/.zhistory
 HISTSIZE=1000
