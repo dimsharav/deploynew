@@ -18,12 +18,11 @@ export WMII_TERM="lxterminal"
 wmiir write /tagrules <<!
 /MPlayer|VLC/ -> ~
 /Firefox/ -> 4
-/Transmission/ -> 8
-/lxterminal/ -> 1
 /gimp/ -> 6
 /xchat/ -> 5
 /pidgin/ -> 5
 /pcmanfm/ -> 7
 /trayer/ -> 0
-/Zim/ -> 6
+/Zim/ -> 3
+/Oracle/ -> 0
 !

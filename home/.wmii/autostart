@@ -1,4 +1,11 @@
-/opt/scripts/xrandr-one
+#!/bin/sh
+#/opt/scripts/xrandr-one
+sudo /opt/mnt/mntprk
 xset m 1 1
+skype&
 firefox&
-
+pidgin&
+trayer&
+pcmanfm&
+dropbox&
+prkvm_start
