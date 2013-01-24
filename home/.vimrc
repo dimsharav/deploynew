@@ -58,8 +58,8 @@ set t_Co=256        " 256 цветов
 "--------------
 " Настройки GUI
 "--------------
-" Шрифт для windows
-"set guifont=Liberation_Mono:h12:cRUSSIAN
+" Шрифт для gvim
+set guifont=Monaco,10
 " Убрать меню
 set guioptions-=m
 " Убрать тулбар
@@ -164,8 +164,10 @@ let mapleader = ","             " установка <leader> в ","
 
 map <leader>td <Plug>TaskList       " ,td включает плагин TaskList
 map <leader>n :NERDTreeToggle<CR>   " ,n открывает NERDTree
-map <leader>h :bp<CR>   " ,h открывает предыдущий буфер
-map <leader>l :bn<CR>               " ,h открывает следующий буфер
+map <leader>h :tabp<CR>   " ,h открывает предыдущий буфер
+map <leader>l :tabn<CR>               " ,h открывает следующий буфер
+
+cnoreabbrev t tabnew
 
 " Hint: разделение окна
 "
@@ -174,9 +176,9 @@ map <leader>l :bn<CR>               " ,h открывает следующий �
 " Close current window: Ctrl+w + q
 
 " Автоматическое закрытие скобок
-imap [ []<LEFT>
-imap ( ()<LEFT>
-imap { {}<LEFT>
+"imap [ []<LEFT>
+"imap ( ()<LEFT>
+"imap { {}<LEFT>
 
 " Ctrl+jklh - перемещение между окнами
 map <c-j> <c-w>j
@@ -210,6 +212,6 @@ let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 
 " Выполнение программ python по F9
-nmap <F9> :w<cr>:execute '!python2 %'<CR>
-vmap <F9> <esc>:w<cr>:execute '!python2 %'<CR>
-imap <F9> <esc>:w<cr>:execute '!python2 %'<CR>
+nmap <F9> :w<cr>:execute '!python %'<CR>
+vmap <F9> <esc>:w<cr>:execute '!python %'<CR>
+imap <F9> <esc>:w<cr>:execute '!python %'<CR>
