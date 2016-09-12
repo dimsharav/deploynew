@@ -13,7 +13,7 @@ sudo chown :storage /opt/mnt
 
 # Скрипты xrandr
 sudo cp -R ./scripts /opt
-sudo chown dimsharav:dimsharav /opt/mnt
+sudo chown dimsharav:dimsharav /opt/scripts
 
 # Конфигурация SLiM
 sudo cp etc/slim.conf /etc

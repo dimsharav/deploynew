@@ -26,3 +26,5 @@ wmiir write /tagrules <<!
 /Zim/ -> 3
 /Oracle/ -> 0
 !
+
+wmiir xwrite /ctl "font xft:DejaVu Sans Mono-10"
